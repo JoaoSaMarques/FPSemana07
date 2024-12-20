@@ -27,8 +27,10 @@ class SMS(Mensagem):
         return f"SMS para {self.numero}. Mensagem: {self.mensagem}"
         
 class NotificacaoPush(Mensagem):
-    def __init__(self):
+    def __init__(self, dispositivo_id, mensagem):
         super().__init__()
+        self.dispositivo_id = dispositivo_id
+        self.mensagem = mensagem
         
     def enviar_mensagem(self):
         print("Mensagem enviada por notificação push")
