@@ -2,6 +2,10 @@ class Mensagem:
     def __init__(self):
         pass
     
+    def enviar_mensagem(self):
+        raise NotImplementedError("Este método deve ser implementado por subclasses.")
+
+    
 class Email(Mensagem):
     def __init__(self):
         super().__init__()
