@@ -10,3 +10,7 @@ class Email(Mensagem):
 class SMS(Mensagem):
     def __init__(self):
         super().__init__()
+        
+class NotificacaoPush(Mensagem):
+    def __init__(self):
+        super().__init__()
