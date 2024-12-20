@@ -14,7 +14,8 @@ class Email(Mensagem):
         self.corpo = corpo
         
     def enviar_mensagem(self):
-        print("Mensagem enviada por e-mail")
+        return f"Email para {self.destinatario}. Assunto: {self.assunto}. Corpo: {self.corpo}"
+
         
 class SMS(Mensagem):
     def __init__(self):
