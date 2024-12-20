@@ -33,4 +33,4 @@ class NotificacaoPush(Mensagem):
         self.mensagem = mensagem
         
     def enviar_mensagem(self):
-        print("Mensagem enviada por notificação push")
+        return f"Notificação Push para {self.dispositivo_id}. Mensagem: {self.mensagem}"
