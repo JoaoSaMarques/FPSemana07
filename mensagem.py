@@ -18,8 +18,10 @@ class Email(Mensagem):
 
         
 class SMS(Mensagem):
-    def __init__(self):
+    def __init__(self, numero, mensagem):
         super().__init__()
+        self.numero = numero
+        self.mensagem = mensagem
         
     def enviar_mensagem(self):
         print("Mensagem enviada por SMS")
