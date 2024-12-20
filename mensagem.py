@@ -14,7 +14,7 @@ class Email(Mensagem):
         self.corpo = corpo
         
     def enviar_mensagem(self):
-        return f"Email para {self.destinatario}. Assunto: {self.assunto}. Corpo: {self.corpo}"
+        return f"Email ({self.destinatario}). Assunto: {self.assunto}. Corpo: {self.corpo}"
 
         
 class SMS(Mensagem):
@@ -24,7 +24,7 @@ class SMS(Mensagem):
         self.mensagem = mensagem
         
     def enviar_mensagem(self):
-        return f"SMS para {self.numero}. Mensagem: {self.mensagem}"
+        return f"SMS ({self.numero}). {self.mensagem}"
         
 class NotificacaoPush(Mensagem):
     def __init__(self, dispositivo_id, mensagem):
@@ -33,4 +33,16 @@ class NotificacaoPush(Mensagem):
         self.mensagem = mensagem
         
     def enviar_mensagem(self):
-        return f"Notificação Push para {self.dispositivo_id}. Mensagem: {self.mensagem}"
+        return f"Notificação Push({self.dispositivo_id}). {self.mensagem}"
+    
+def realizar_envio(Mensagem):
+    print(Mensagem.enviar_mensagem())
+    
+# Testando a implementação
+email = Email(destinatario="joao.silva@email.com", assunto="Reunião", corpo="Reunião marcada para as 10h.")
+sms = SMS(numero="912345678", mensagem="A sua Encomenda Chegou!")
+notificacao = NotificacaoPush(dispositivo_id="abc123", mensagem="Tem uma Nova Mensagem.")
+
+realizar_envio(email)
+realizar_envio(sms)
+realizar_envio(notificacao)
