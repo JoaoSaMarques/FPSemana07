@@ -7,8 +7,11 @@ class Mensagem:
 
     
 class Email(Mensagem):
-    def __init__(self):
+    def __init__(self, destinatario, assunto, corpo):
         super().__init__()
+        self.destinatario = destinatario
+        self.assunto = assunto
+        self.corpo = corpo
         
     def enviar_mensagem(self):
         print("Mensagem enviada por e-mail")
